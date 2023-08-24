@@ -1,0 +1,35 @@
+#
+#  docker run --name mypostgres \
+#  -e POSTGRES_USER=root \
+#  -e POSTGRES_PASSWORD=password \
+#  -e POSTGRES_DB=mydatabase \
+#  -p 5432:5432 \
+#  -d postgres
+#
+
+# DATABASE CONFIGURATION
+POSTGRES_HOST: localhost
+POSTGRES_PORT: 5432
+POSTGRES_DATABASE_NAME: <database_name>
+POSTGRES_USERNAME: <root>
+POSTGRES_PASSWORD: <password>
+
+# EMAIL CONFIGURATION
+EMAIL_HOST: smtp.gmail.com
+EMAIL_PORT: 587
+EMAIL_ID: <your email address>
+EMAIL_PASSWORD: <your app password>
+VERIFY_EMAIL_HOST: http://<your-domain-name>:${SERVER_PORT}/api/v1/registration/token/activate?token=
+
+# SERVER
+SERVER_PORT: 8080
+ACTIVE_PROFILE: dev
+
+# JWT
+JWT_SECRET_KEY: <secret-key>
+JWT_EXPIRATION_TIME: 1000 * 60 * 60 * 24 # 24 hour
+
+# DEBUGGING
+logging:
+  level:
+    spring.security.*: off
